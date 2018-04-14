@@ -2,6 +2,10 @@
 
 本仓库主要使用numpy来实现深度学习中常用的网络结构，复习深度学习相关知识。
 
+使用构造的网络模块搭建LeNet-5（结构参考Caffe实现）训练手写数字识别。
+
+![](http://chenguanfuqq.gitee.io/tuquan2/img_2018_4/lenet_caffe.png)
+
 ## 卷积
 
 卷积模块实现时，使用标准模块测试输入输出。
