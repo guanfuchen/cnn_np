@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import torch
 import numpy as np
 from scipy import misc
 import matplotlib.pyplot as plt
@@ -69,16 +70,48 @@ class Conv2d(object):
 
     # 计算梯度过程中同时将误差反向传播计算出来，根据当前误差返回上一误差
     def calc_gradient(self, error):
-        error_col = error.reshape(self.batch_size, self.out_channels, -1)
-        print(self.col_images.shape)
-        print(error_col.shape)
+        self.error = error
+        error_col = self.error.reshape(self.batch_size, self.out_channels, -1)
+        # print('self.col_images.shape:', self.col_images.shape)
+        # print('error_col.shape:', error_col.shape)
+        # print('error.shape:', error.shape)
 
         for batch_i in range(self.batch_size):
             self.weight_gradient += np.dot(error_col[batch_i], self.col_images[batch_i]).reshape(self.weight.shape)
-        # 将对应的维度相加
+        # 将对应的维度相加，需要将N和最后求和
         self.bias_gradient += np.sum(error_col, axis=(0, 2)).reshape(self.bias.shape)
-        # TODO
         # 反向传播计算上一层error
+
+        error_pad = np.pad(self.error, ((0, 0), (0, 0), (self.kernel_size - 1, self.kernel_size - 1), (self.kernel_size - 1, self.kernel_size - 1)), 'constant', constant_values=0)
+        # print('error_pad.shape:', error_pad.shape)
+        # print('error:', error)
+        # print('error_pad:', error_pad)
+
+        weight_flip = self.weight[:, :, ::-1, ::-1]
+        weight_flip = np.swapaxes(weight_flip, 0, 1)
+        weight_flip_col = weight_flip.reshape(self.in_channels, -1)
+        # print('weight_flip_col.shape:', weight_flip_col.shape)
+
+
+        next_error = np.zeros((self.batch_size, self.in_channels, self.input_h, self.input_w))
+        for batch_i in range(self.batch_size):
+            # 输入的第i个图像C_in*H_in*W_in
+            error_pad_image_batch_i = error_pad[batch_i, :]
+            error_pad_image_batch_i_col = im2col(error_pad_image_batch_i, self.kernel_size, self.stride)
+            # print('error_pad_image_batch_i_col.shape:', error_pad_image_batch_i_col.shape)
+            next_error[batch_i] = np.reshape(np.dot(weight_flip_col, np.transpose(error_pad_image_batch_i_col)), (self.in_channels, self.input_h, self.input_w))
+
+
+        # print('error_pad_image_col.shape:', error_pad_image_col.shape)
+        # print('error_pad_image_col.shape:', error_pad_image_col.shape)
+        # next_error = np.dot(error_pad_image_col, np.transpose(weight_flip_col)).reshape(self.batch_size, self.in_channels, self.input_h, self.input_w)
+        # print('next_error.shape:', next_error.shape)
+        #
+        # conv_out[batch_i] = np.reshape(np.dot(weight_col, np.transpose(image_batch_i_col)) + self.bias,
+        #                                (self.out_channels, self.out_h, self.out_w))
+
+        return next_error
+
 
     def backward(self, lr=0.01):
         self.weight -= lr*self.weight_gradient
