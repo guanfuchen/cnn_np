@@ -13,7 +13,7 @@ import numpy as np
 from context import layers
 from layers import conv
 
-class TestConv(unittest.TestCase):
+class TestConv2d(unittest.TestCase):
     def test_forward(self):
         input_var = Variable(torch.randn(3, 3, 5, 5))
         conv_var = nn.Conv2d(in_channels=3, out_channels=3, kernel_size=3)
@@ -31,7 +31,7 @@ class TestConv(unittest.TestCase):
         # print('conv_bias_np_vector.shape:', conv_bias_np_vector.shape)
         # print(output_np)
 
-        conv_custom = conv.Conv2d(in_channels=3, out_channels=3, kernel_size=3)
+        conv_custom = conv.Conv2d(in_channels=3, out_channels=3, kernel_size=3, init_params=True)
 
         conv_custom_weight = conv_custom.weight
         conv_custom_bias = conv_custom.bias
@@ -94,7 +94,7 @@ class TestConv(unittest.TestCase):
         # print('conv_var_next_eta_np:', conv_var_next_eta_np)
         # print('conv_var_next_eta_np.shape:', conv_var_next_eta_np.shape)
 
-        conv_custom = conv.Conv2d(in_channels=3, out_channels=3, kernel_size=3)
+        conv_custom = conv.Conv2d(in_channels=3, out_channels=3, kernel_size=3, init_params=True)
         conv_eta = np.ones(conv_out_var_np.shape)
         # conv_eta = np.zeros(conv_out_var_np.shape)
         # conv_eta[:, 0, 0, 0] = 1

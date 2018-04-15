@@ -6,6 +6,7 @@
 
 ![](http://chenguanfuqq.gitee.io/tuquan2/img_2018_4/lenet_caffe.png)
 
+---
 ## 卷积
 
 卷积模块实现时，使用标准模块测试输入输出。
@@ -21,6 +22,21 @@
 [Convolutional Neural Networks backpropagation: from intuition to derivation](https://grzegorzgwardys.wordpress.com/2016/04/22/8/)
 
 ---
+## 全连接层
+
+全连接层
+
+[linear.py](https://github.com/pytorch/pytorch/blob/master/torch/nn/modules/linear.py)
+
+---
+## 实现日志
+
+- [x] Conv2d
+- [ ] Pool2d
+- [ ] Linear
+- [ ] Softmax
+
+---
 ## 参考链接
 
 [手把手带你用Numpy实现CNN <零>](https://zhuanlan.zhihu.com/p/33773140) 作者也是基于这个思路讲解项目思路。
@@ -32,3 +48,9 @@
 [Convolutional Neural Networks (CNNs / ConvNets)](http://cs231n.github.io/convolutional-networks/) cs231n中关于卷积的教程。
 
 [Implementing convolution as a matrix multiplication](https://buptldy.github.io/2016/10/01/2016-10-01-im2col/) 实现卷积操作。
+
+[lenet.prototxt](https://github.com/BVLC/caffe/blob/master/examples/mnist/lenet.prototxt) Caffe中关于LeNet-5的相关实现。
+
+[Netscope](http://ethereon.github.io/netscope/quickstart.html) Netscope一款开源的网络可视化框架（支持caffe）。
+
+[pytorch mnist code](https://github.com/pytorch/examples/blob/master/mnist/main.py) pytorch中mnist代码参考。
