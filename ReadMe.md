@@ -93,3 +93,5 @@ CrossEntropy层使用了one-hot编码的target。
 [pytorch mnist code](https://github.com/pytorch/examples/blob/master/mnist/main.py) pytorch中mnist代码参考。
 
 [pytorch modules](https://github.com/pytorch/pytorch/tree/master/torch/nn/modules) pytorch中深度学习模块实现列表。
+
+[NumPyCNN](https://github.com/ahmedfgad/NumPyCNN) 使用np实现了卷积层、ReLU和最大池化层。
