@@ -95,3 +95,5 @@ CrossEntropy层使用了one-hot编码的target。
 [pytorch modules](https://github.com/pytorch/pytorch/tree/master/torch/nn/modules) pytorch中深度学习模块实现列表。
 
 [NumPyCNN](https://github.com/ahmedfgad/NumPyCNN) 使用np实现了卷积层、ReLU和最大池化层。
+
+[nnet](https://github.com/andersbll/deeppy/tree/master/deeppy/expr/nnet) 用deeppy深度学习框架实现的细节。
