@@ -77,24 +77,15 @@ CrossEntropy层使用了one-hot编码的target。
 ---
 ## 参考链接
 
-[手把手带你用Numpy实现CNN <零>](https://zhuanlan.zhihu.com/p/33773140) 作者也是基于这个思路讲解项目思路。
-
-[CNN-Numpy](https://github.com/wuziheng/CNN-Numpy) 代码可以参考。
-
-[贾扬清分享_深度学习框架caffe](http://www.datakit.cn/blog/2015/06/12/online_meet_up_with_yangqing_jia.html) 贾扬清关于caffe的一些分享。
-
-[Convolutional Neural Networks (CNNs / ConvNets)](http://cs231n.github.io/convolutional-networks/) cs231n中关于卷积的教程。
-
-[Implementing convolution as a matrix multiplication](https://buptldy.github.io/2016/10/01/2016-10-01-im2col/) 实现卷积操作。
-
-[lenet.prototxt](https://github.com/BVLC/caffe/blob/master/examples/mnist/lenet.prototxt) Caffe中关于LeNet-5的相关实现。
-
-[Netscope](http://ethereon.github.io/netscope/quickstart.html) Netscope一款开源的网络可视化框架（支持caffe）。
-
-[pytorch mnist code](https://github.com/pytorch/examples/blob/master/mnist/main.py) pytorch中mnist代码参考。
-
-[pytorch modules](https://github.com/pytorch/pytorch/tree/master/torch/nn/modules) pytorch中深度学习模块实现列表。
-
-[NumPyCNN](https://github.com/ahmedfgad/NumPyCNN) 使用np实现了卷积层、ReLU和最大池化层。
-
-[nnet](https://github.com/andersbll/deeppy/tree/master/deeppy/expr/nnet) 用deeppy深度学习框架实现的细节。
+- [手把手带你用Numpy实现CNN <零>](https://zhuanlan.zhihu.com/p/33773140) 作者也是基于这个思路讲解项目思路。
+- [CNN-Numpy](https://github.com/wuziheng/CNN-Numpy) 代码可以参考。
+- [贾扬清分享_深度学习框架caffe](http://www.datakit.cn/blog/2015/06/12/online_meet_up_with_yangqing_jia.html) 贾扬清关于caffe的一些分享。
+- [Convolutional Neural Networks (CNNs / ConvNets)](http://cs231n.github.io/convolutional-networks/) cs231n中关于卷积的教程。
+- [Implementing convolution as a matrix multiplication](https://buptldy.github.io/2016/10/01/2016-10-01-im2col/) 实现卷积操作。
+- [lenet.prototxt](https://github.com/BVLC/caffe/blob/master/examples/mnist/lenet.prototxt) Caffe中关于LeNet-5的相关实现。
+- [Netscope](http://ethereon.github.io/netscope/quickstart.html) Netscope一款开源的网络可视化框架（支持caffe）。
+- [pytorch mnist code](https://github.com/pytorch/examples/blob/master/mnist/main.py) pytorch中mnist代码参考。
+- [pytorch modules](https://github.com/pytorch/pytorch/tree/master/torch/nn/modules) pytorch中深度学习模块实现列表。
+- [NumPyCNN](https://github.com/ahmedfgad/NumPyCNN) 使用np实现了卷积层、ReLU和最大池化层。
+- [nnet](https://github.com/andersbll/deeppy/tree/master/deeppy/expr/nnet) 用deeppy深度学习框架实现的细节。
+- [brainforge](https://github.com/csxeba/brainforge)，这是一个仅仅基于np实现的NN库，其中layers和optimization等，可以作为后期实现参考。
