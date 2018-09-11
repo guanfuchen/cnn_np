@@ -72,6 +72,7 @@ CrossEntropy层使用了one-hot编码的target。
 - [x] Softmax
 - [x] CrossEntropy
 - [x] ReLU
+- [ ] LReLU
 
 ---
 ## 参考链接
